@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajay Gawade | Medical Robotics Engineer</title>
+<meta name="description" content="Portfolio of Ajay Gawade: surgical robotics, surgical navigation, haptics, control and machine learning projects from Johns Hopkins.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦾</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap">
+<b>Ajay Gawade</b>
+<a href="#projects">Projects</a><a href="#skills" class="hide">Skills</a><a href="#about" class="hide">About</a><a href="#contact">Contact</a>
+</div></nav>
+
+<main class="wrap">
+<header class="hero">
+<div>
+<h1>Robots that work safely inside the operating room.</h1>
+<p>I'm Ajay Gawade, a robotics engineer from the Laboratory of Computational Sensing and Robotics at Johns Hopkins University. I build and validate surgical robots, tracking systems, force sensing and haptic interfaces, and measure each one against ground truth.</p>
+<div class="btns"><a class="btn p" href="#projects">See projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<svg class="rcm" viewBox="0 0 400 300" role="img" aria-label="Diagram of a surgical tool pivoting about a fixed remote center of motion at the skin entry point">
+<path d="M20 150 H380" stroke="currentColor" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round" opacity=".5"/>
+<path d="M40 150 Q200 285 360 150" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+<g class="tool"><line x1="200" y1="10" x2="200" y2="250" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><rect x="186" y="6" width="28" height="44" rx="4" fill="currentColor"/></g>
+<circle cx="200" cy="150" r="9" fill="#d98a00"/>
+<text x="216" y="140" font-size="14" fill="currentColor" font-family="Instrument Sans,sans-serif">fixed pivot (skin entry)</text>
+</svg>
+</header>
+
+<div class="stats">
+<div><strong>0.17 mm</strong><span>RMS error, UR5 image-guided path following</span></div>
+<div><strong>0.66 mm</strong><span>TKA registration error against ground truth</span></div>
+<div><strong>0.33 N</strong><span>dVRK gripper force estimation error</span></div>
+<div><strong>99.5%</strong><span>tracking continuity, hybrid IMU + optical</span></div>
+</div>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="sub">Course, lab and industry work in surgical robotics. Filter by area.</p>
+<div class="chips" id="chips" role="group" aria-label="Filter projects"></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<p class="sub">The tools I use across these projects.</p>
+<div class="skills">
+<div><h3>Robots and hardware</h3><ul><li>UR5 / UR10, Galen Mk-3, da Vinci Research Kit</li><li>Polaris Vicra optical tracking, FARO laser scanner</li><li>6-DoF force/torque sensors, IMUs, LiDAR, RealSense</li><li>Electromagnetic actuation, Arduino</li></ul></div>
+<div><h3>Software</h3><ul><li>C++14, Python, MATLAB</li><li>ROS 1 (Melodic), rviz, OpenCV</li><li>PyTorch, TensorFlow</li><li>Linux, Git</li></ul></div>
+<div><h3>Methods</h3><ul><li>Registration, homography, hand-eye calibration (AX=XB)</li><li>Inverse kinematics, resolved-rate and PID control</li><li>Extended Kalman filtering, sensor fusion</li><li>Sensor calibration and ground-truth validation</li><li>Model-based reinforcement learning</li></ul></div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div><h2>About</h2></div>
+<div>
+<p>I work on image-guided and force-aware surgical robots. My projects at Johns Hopkins span orthopedic and ENT procedures, the da Vinci Research Kit, and magnetic microrobots.</p>
+<p>My approach is simple: build the system, then check it against an independent ground truth, such as a laser scanner, an optical tracker or a force sensor. Every result on this page comes from that kind of comparison.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p class="sub">Open to conversations about medical robotics, navigation and sensing.</p>
+<div class="btns">
+<a class="btn p" href="mailto:agawade1@alumni.jh.edu">agawade1@alumni.jh.edu</a>
+<a class="btn" href="https://github.com/AjayGawade91">GitHub</a>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Ajay Gawade. Some work was done at the Laboratory of Computational Sensing and Robotics, Johns Hopkins University.</div></footer>
+
+<script>
+const P=[
+{t:"Image-guided core decompression robot",c:"Surgical robotics",w:"Medical Robot System Design, Fall 2022",d:"A UR5 with camera and laser pointer simulates placing a continuum manipulator on the skin entry point of a hip phantom, using homography, contour following and a position controller. A Polaris Vicra tracker checks the result.",r:"RMS error fell from 0.77 mm (open loop) to 0.17 mm with the position controller. Camera-to-robot homography error was 0.58 mm.",g:["UR5","Polaris Vicra","ROS","C++","OpenCV"]},
+{t:"Hybrid inertial-optical bone tracking (NavSense)",c:"Imaging & tracking",w:"Knee arthroplasty navigation",d:"An Extended Kalman Filter fuses 200 Hz IMU prediction with 60 Hz optical updates so bone tracking continues when the camera view is blocked. Validated against an independent FARO laser scanner chain.",r:"99.5% tracking continuity versus 91% for optical-only, across 288 measurements, 3 operators and 2 cadaveric specimens.",g:["EKF","IMU","NDI tracker","FARO","Sensor fusion"]},
+{t:"Registration accuracy in total knee arthroplasty",c:"Imaging & tracking",w:"Ground-truth comparative study",d:"Compared the surgical registration workflow of an mBos TKA system with ground truth from CT sphere centers and laser-scanned fiducials on cadaver femurs and tibias.",r:"0.66 mm RMSE in translation and 0.42° in rotation across 4 users and 5 bone sets.",g:["Registration","CT","Cadaver","Validation"]},
+{t:"Intrinsic gripper force sensing and haptics for the dVRK",c:"Haptics & sensing",w:"With Lidia Al-Zogbi and Jintan Zhang",d:"An LSTM network learns the gripper's free-space dynamics so contact force can be estimated without a sensor at the tool. A wrist-worn vibrotactile band relays the force to the operator.",r:"0.33 N RMSE (8.73% normalized). In a pilot study, external users classified hard and soft objects with 100% accuracy.",g:["dVRK","PyTorch","ROS","Arduino"]},
+{t:"Torque calibration and dynamic force response of the dVRK PSM",c:"Haptics & sensing",w:"Spring 2023",d:"Measured motor torque constants against an ATI Nano-43 force sensor instead of relying on datasheet values, then characterized the nonlinear force response caused by cable stretch and hysteresis.",r:"Updated torque constants for four joints. Force estimation RMS error was 3.51% at J3 = 100 mm and 4.04% at 115 mm.",g:["dVRK","ATI Nano-43","MATLAB","Bézier fitting"]},
+{t:"Force-sensing forceps for cochlear implant surgery",c:"Haptics & sensing",w:"Advanced Computer Integrated Surgery",d:"Designed and calibrated a 6-DoF force-sensing forceps for the Galen Mk-3 comanipulation robot, with experimental calibration against ground-truth sensor data on a cochlea model.",r:"Calibrated with Bernstein polynomial fits and a linear model to estimate tooltip force.",g:["Galen Mk-3","6-DoF F/T","MATLAB","ROS"]},
+{t:"Hand-control interface for the Galen robot",c:"Surgical robotics",w:"Johns Hopkins LCSR",d:"A tool-mounted switch sleeve connected through a ROS bridge replaces the foot pedal that sets robot gain, improving ergonomics in mastoidectomy and craniectomy.",r:"Working prototype tested with a clinician.",g:["Galen","ROS","Microcontroller","3D printing"]},
+{t:"Magnetic capsule robot for hydrocephalus treatment",c:"Surgical robotics",w:"Shunt and ventriculostomy demonstrations",d:"PID waypoint control moves a magnetic capsule through a planned route (shunt method). Joystick-based dipole-model control drives the robot downward and reorients it for the piercing step of a third ventriculostomy.",r:"Maximum waypoint error 1.41 mm. RMS error across waypoints 1.25 mm, within the 2 mm specification.",g:["Magnetic actuation","PID","FLIR camera","MATLAB"]},
+{t:"Latent-imagination reinforcement learning for autonomous racing",c:"Control & ML",w:"Foundations of Reinforcement Learning",d:"Reproduced the Dreamer world-model agent on F1TENTH tracks using LiDAR observations, and added a gap-following term to the reward to reduce collisions.",r:"Episode reward rose from 41 to 68 on circle_cw and from 147 to 181 on Columbia.",g:["Dreamer","TensorFlow","F1TENTH","LiDAR"]},
+{t:"UR5 kinematics and control in MATLAB",c:"Control & ML",w:"Robot Devices, Kinematics, Dynamics and Control",d:"Implemented inverse kinematics (8 solutions with screw-path interpolation), resolved-rate control and transpose-Jacobian control for pick-and-place, with joint-limit and ground-collision checks.",r:"Pick and place pose errors on the order of 1e-5 in simulation.",g:["MATLAB","ROS","UR5","Jacobian"]},
+{t:"Compressive 3D ultrasound from a single transducer",c:"Imaging & tracking",w:"With the Andreou Lab",d:"A 3D-printed rotating mask adds random delays to a single ultrasound sensor, and a decoding algorithm reconstructs a 3D image. Built the amplifier circuit and stepper-driven mask mount.",r:"Reconstruction quality improved as the mask took more rotation steps.",g:["Ultrasound","Circuit design","Signal processing"]},
+{t:"Robot tool handover and F1TENTH localization",c:"Control & ML",w:"HRI study and ongoing work",d:"A UR5 picks and hands over surgical tools using AR-tag detection and AX=XB hand-eye calibration, with a participant study. Separately, PID wall-following and IMU frame calibration for F1TENTH.",r:"Evaluated with 14 participants, mean height 168.85 cm, to set handover position.",g:["UR5","AR tags","ROS","PID","IMU"]}
+];
+const cats=["All",...new Set(P.map(p=>p.c))],chips=document.getElementById("chips"),grid=document.getElementById("grid");
+function show(f){
+chips.innerHTML=cats.map(c=>`<button aria-pressed="${c===f}" data-c="${c}">${c}</button>`).join("");
+grid.innerHTML=P.filter(p=>f==="All"||p.c===f).map(p=>`<article class="card"><span class="when">${p.c} · ${p.w}</span><h3>${p.t}</h3><p>${p.d}</p><p class="res">${p.r}</p><div class="tags">${p.g.map(x=>`<span>${x}</span>`).join("")}</div></article>`).join("");
+}
+chips.addEventListener("click",e=>{if(e.target.dataset.c)show(e.target.dataset.c)});
+show("All");
+</script>
+</body>
+</html>
